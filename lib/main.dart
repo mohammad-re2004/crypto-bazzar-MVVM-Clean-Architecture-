@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/presentation/coin_list/screens/coin_list_screen.dart';
-import 'package:http/http.dart';
+
 
 void main() {
   runApp(Application());
