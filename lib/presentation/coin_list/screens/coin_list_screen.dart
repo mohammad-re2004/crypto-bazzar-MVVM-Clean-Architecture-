@@ -1,7 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constant/constants.dart';
+import 'package:flutter_application_1/core/di/locator.dart';
 import 'package:flutter_application_1/domain/entities/crypto.dart';
+import 'package:flutter_application_1/domain/repositories/coin_list_repositorie.dart';
+import 'package:flutter_application_1/domain/usecase/get_all_coins_usecase.dart';
 import 'package:flutter_application_1/presentation/coin_list/bloc/bloc_bloc.dart';
 import 'package:flutter_application_1/presentation/coin_list/widgets/coin_list_item.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +26,7 @@ class _CoinListScreenState extends State<CoinListScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) {
-        var bloc = CoinListBloc();
+        var bloc = CoinListBloc(locator<AllCoinsListUseCase>());
         bloc.add(LoadInitialCoinListEvent());
         return bloc;
       },
@@ -130,13 +133,7 @@ class _CoinListScreenState extends State<CoinListScreen> {
     }
   }
 
-  Future<List<Crypto>> getData() async {
-    var response = await Dio().get('https://api.coincap.io/v2/assets');
-    List<Crypto> cryptoList = response.data['data']
-        .map<Crypto>((jsonMapObject) => Crypto.fromMapJson(jsonMapObject))
-        .toList();
-    return cryptoList;
-  }
+  
 
  
 }
