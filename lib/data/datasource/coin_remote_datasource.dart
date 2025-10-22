@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_application_1/core/network/dio_clinet.dart';
 import 'package:flutter_application_1/data/datasource/coin_datasource.dart';
 import 'package:flutter_application_1/data/dtos/crypto_dto.dart';
 import 'package:flutter_application_1/data/mappers/crypto_mapper.dart';
