@@ -5,6 +5,7 @@ import 'package:flutter_application_1/data/datasource/coin_remote_datasource.dar
 import 'package:flutter_application_1/data/repositories/coin_repositorie.dart';
 import 'package:flutter_application_1/domain/repositories/coin_list_repositorie.dart';
 import 'package:flutter_application_1/domain/usecase/get_all_coins_usecase.dart';
+import 'package:flutter_application_1/domain/usecase/searchCoin_List_usecase.dart';
 import 'package:get_it/get_it.dart';
 
 var locator = GetIt.instance;
@@ -15,7 +16,7 @@ Future<void> setupLocator() async {
   //data sources
 
   locator.registerFactory<CoinDataSource>(
-      () => CoinRemoteDataSource(locator<Dio>()));
+      () => CoinRemoteDataSource(dioClinet:locator<Dio>()));
 
   //repositories
 
@@ -26,4 +27,7 @@ Future<void> setupLocator() async {
 
   locator.registerSingleton<AllCoinsListUseCase>(
       AllCoinsListUseCase(locator<CoinListRepository>()));
+      
+  locator.registerSingleton<SearchCoinListUseCase>(
+      SearchCoinListUseCase(locator<CoinListRepository>()));
 }

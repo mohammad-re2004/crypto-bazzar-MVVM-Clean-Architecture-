@@ -2,15 +2,16 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_application_1/domain/entities/crypto.dart';
 import 'package:flutter_application_1/domain/usecase/get_all_coins_usecase.dart';
+import 'package:flutter_application_1/domain/usecase/searchCoin_List_usecase.dart';
 import 'package:meta/meta.dart';
-
 part 'bloc_event.dart';
 part 'bloc_state.dart';
 
 class CoinListBloc extends Bloc<BlocEvent, CoinListBlocState> {
   AllCoinsListUseCase allCoinsListUseCase;
+  SearchCoinListUseCase searchCoinListUseCase;
 
-  CoinListBloc(this.allCoinsListUseCase) : super(CoinListBlocInitialState()) {
+  CoinListBloc(this.allCoinsListUseCase, this.searchCoinListUseCase) : super(CoinListBlocInitialState()) {
     on<LoadInitialCoinListEvent>((event, emit) async {
       // TODO: implement event handler
 
@@ -32,6 +33,11 @@ class CoinListBloc extends Bloc<BlocEvent, CoinListBlocState> {
     });
 
     on<SearchCoinDataEvent>((event, emit) async {
+      emit(CoinListLoadingState());
+      
+        var response = await searchCoinListUseCase.call(event.query);
+        emit(CoinListSuccessState(response));
+      
       // // TODO: implement event handler
 
       // emit(CoinListLoadingState());

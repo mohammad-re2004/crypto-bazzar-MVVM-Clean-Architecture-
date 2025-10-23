@@ -5,6 +5,7 @@ import 'package:flutter_application_1/core/di/locator.dart';
 import 'package:flutter_application_1/domain/entities/crypto.dart';
 import 'package:flutter_application_1/domain/repositories/coin_list_repositorie.dart';
 import 'package:flutter_application_1/domain/usecase/get_all_coins_usecase.dart';
+import 'package:flutter_application_1/domain/usecase/searchCoin_List_usecase.dart';
 import 'package:flutter_application_1/presentation/coin_list/bloc/bloc_bloc.dart';
 import 'package:flutter_application_1/presentation/coin_list/widgets/coin_list_item.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +27,7 @@ class _CoinListScreenState extends State<CoinListScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) {
-        var bloc = CoinListBloc(locator<AllCoinsListUseCase>());
+        var bloc = CoinListBloc(locator<AllCoinsListUseCase>(),locator<SearchCoinListUseCase>());
         bloc.add(LoadInitialCoinListEvent());
         return bloc;
       },
@@ -62,7 +63,9 @@ class _CoinListScreenState extends State<CoinListScreen> {
                         textDirection: TextDirection.rtl,
                         child: TextField(
                           onChanged: (value) {
-                           context.read<CoinListBloc>().add(SearchCoinDataEvent(value));
+                            context
+                                .read<CoinListBloc>()
+                                .add(SearchCoinDataEvent(value));
                           },
                           decoration: InputDecoration(
                             hintText: "اسم رمزارز سرچ کن",
@@ -132,10 +135,6 @@ class _CoinListScreenState extends State<CoinListScreen> {
         );
     }
   }
-
-  
-
- 
 }
 
 class _bulidSusscssListWidget extends StatelessWidget {
@@ -143,7 +142,7 @@ class _bulidSusscssListWidget extends StatelessWidget {
     required this.cryptoList,
   });
 
-  final List<Crypto>? cryptoList;
+  final List<CryptoEntity>? cryptoList;
 
   @override
   Widget build(BuildContext context) {

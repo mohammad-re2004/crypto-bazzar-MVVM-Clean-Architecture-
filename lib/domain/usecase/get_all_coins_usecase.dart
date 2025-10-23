@@ -6,7 +6,7 @@ class AllCoinsListUseCase {
 
   AllCoinsListUseCase(this.repository);
 
-  Future<List<Crypto>> call() async {
+  Future<List<CryptoEntity>> call() async {
     return await repository.getCoinList();
   }
 }
