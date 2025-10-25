@@ -44,16 +44,16 @@ Presentation Layer: UI + BLOC + ViewModel (MVVM)
 
 🛠️ Technologies Used
 
-# Flutter — cross-platform UI framework
+Flutter — cross-platform UI framework
 
-# Dart — main programming language
+Dart — main programming language
 
-# BLoC — reactive state management
+BLoC — reactive state management
 
-# Clean Architecture — separation of concerns
+Clean Architecture — separation of concerns
 
-# MVVM — View ↔ ViewModel binding pattern
+MVVM — View ↔ ViewModel binding pattern
 
-# HTTP / Dio — for API communication
+HTTP / Dio — for API communication
 
-# Equatable — for cleaner state comparisons
+Equatable — for cleaner state comparisons
