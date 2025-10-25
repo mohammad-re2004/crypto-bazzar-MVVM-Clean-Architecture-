@@ -16,7 +16,6 @@ A modern Flutter application that provides **real-time cryptocurrency prices**, 
 ---
 
 ## 🧩 Architecture Overview
-
 lib/
  ├── core/                  → Shared resources, constants, utilities
  ├── data/                  → Repositories, data sources (API, local)
