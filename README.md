@@ -34,6 +34,7 @@ lib/
 
 This structure strictly follows Clean Architecture principles:
 
+
 Domain Layer: Business logic (use cases, entities)
 
 Data Layer: Implementation of repositories and API handling
