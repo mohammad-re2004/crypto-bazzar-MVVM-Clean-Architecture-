@@ -6,7 +6,6 @@ import 'package:flutter_application_1/presentation/coin_list/screens/coin_list_s
 void main() async {
 
   await setupLocator();
-
   
   runApp(Application());
 }
