@@ -1,9 +1,7 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constant/constants.dart';
 import 'package:flutter_application_1/core/di/locator.dart';
 import 'package:flutter_application_1/domain/entities/crypto.dart';
-import 'package:flutter_application_1/domain/repositories/coin_list_repositorie.dart';
 import 'package:flutter_application_1/domain/usecase/get_all_coins_usecase.dart';
 import 'package:flutter_application_1/domain/usecase/searchCoin_List_usecase.dart';
 import 'package:flutter_application_1/presentation/coin_list/bloc/bloc_bloc.dart';
@@ -27,7 +25,8 @@ class _CoinListScreenState extends State<CoinListScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) {
-        var bloc = CoinListBloc(locator<AllCoinsListUseCase>(),locator<SearchCoinListUseCase>());
+        var bloc = CoinListBloc(
+            locator<AllCoinsListUseCase>(), locator<SearchCoinListUseCase>());
         bloc.add(LoadInitialCoinListEvent());
         return bloc;
       },
