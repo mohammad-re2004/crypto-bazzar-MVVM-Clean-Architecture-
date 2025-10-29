@@ -1,16 +1,59 @@
-# flutter_application_1
+# 🪙 Crypto Bazar
 
-A new Flutter project.
+A modern Flutter application that provides **real-time cryptocurrency prices**, built using **Clean Architecture** and **BLOC state management** for scalability and maintainability.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🔹 View **real-time prices** of popular cryptocurrencies  
+- 🔹 **Search** for specific coins by name or symbol  
+- 🔹 **Clean & modular architecture** (Domain, Data, Presentation layers)  
+- 🔹 State management with **BLOC**
+- 🔹 Error handling and sealed states  
+- 🔹 Scalable with **Dependency Injection** support  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧩 Architecture Overview
+lib/
+ ├── core/                  → Shared resources, constants, utilities
+ ├── data/                  → Repositories, data sources (API, local)
+ │    ├── datasources/
+ │    ├── models/
+ │    └── repositories/
+ ├── domain/                → Entities, repositories, use cases
+ │    ├── entities/
+ │    ├── repositories/
+ │    └── usecases/
+ ├── presentation/          → UI (screens, widgets) + BLoC logic
+ │    ├── blocs/
+ │    ├── screens/
+ │    └── widgets/
+ └── main.dart              → App entry point
+
+This structure strictly follows Clean Architecture principles:
+
+
+Domain Layer: Business logic (use cases, entities)
+
+Data Layer: Implementation of repositories and API handling
+
+Presentation Layer: UI + BLOC + ViewModel (MVVM)
+
+
+🛠️ Technologies Used
+
+Flutter — cross-platform UI framework
+
+Dart — main programming language
+
+BLoC — reactive state management
+
+Clean Architecture — separation of concerns
+
+MVVM — View ↔ ViewModel binding pattern
+
+HTTP / Dio — for API communication
+
+Equatable — for cleaner state comparisons
