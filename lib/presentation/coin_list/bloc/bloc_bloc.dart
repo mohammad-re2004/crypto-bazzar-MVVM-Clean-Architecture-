@@ -38,7 +38,7 @@ class CoinListBloc extends Bloc<BlocEvent, CoinListBlocState> {
       var response = await searchCoinListUseCase.call(event.query);
       emit(CoinListSuccessState(response));
 
-      // // TODO: implement event handler
+      // TODO: implement event handler
 
       // emit(CoinListLoadingState());
 
