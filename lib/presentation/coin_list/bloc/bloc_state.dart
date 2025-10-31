@@ -16,3 +16,8 @@ final class CoinListFailedState extends CoinListBlocState {
   final String errorMessage;
   CoinListFailedState(this.errorMessage);
 }
+
+// final class CoinListSearchingState extends CoinListBlocState {
+// bool isSearching;
+//   CoinListSearchingState(this.isSearching);
+// }
