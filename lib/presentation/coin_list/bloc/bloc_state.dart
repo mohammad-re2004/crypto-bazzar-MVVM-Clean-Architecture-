@@ -21,3 +21,4 @@ final class CoinListFailedState extends CoinListBlocState {
 // bool isSearching;
 //   CoinListSearchingState(this.isSearching);
 // }
+//dd
