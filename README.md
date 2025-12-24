@@ -40,20 +40,3 @@ Domain Layer: Business logic (use cases, entities)
 Data Layer: Implementation of repositories and API handling
 
 Presentation Layer: UI + BLOC + ViewModel (MVVM)
-
-
-🛠️ Technologies Used
-
-Flutter — cross-platform UI framework
-
-Dart — main programming language
-
-BLoC — reactive state management
-
-Clean Architecture — separation of concerns
-
-MVVM — View ↔ ViewModel binding pattern
-
-HTTP / Dio — for API communication
-
-Equatable — for cleaner state comparisons
