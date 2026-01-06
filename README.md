@@ -32,8 +32,6 @@ lib/
  │    └── widgets/
  └── main.dart              → App entry point
 
-This structure strictly follows Clean Architecture principles:
-
 
 Domain Layer: Business logic (use cases, entities)
 
