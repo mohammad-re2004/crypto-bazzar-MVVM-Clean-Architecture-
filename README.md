@@ -3,6 +3,7 @@
 A modern Flutter application that provides real-time cryptocurrency prices built using **Clean Architecture** and **BLOC state management** for scalability and maintainability.
 
 
+
 ---
 
 ##  Features
