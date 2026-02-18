@@ -8,7 +8,7 @@ A modern Flutter application that provides real-time cryptocurrency prices built
 
 ##  Features
 
-- 🔹 View **real-time prices** of popular cryptocurrencies  
+ 🔹 View **real-time prices** of popular cryptocurrencies  
 - 🔹 **Search** for specific coins by name or symbol  
 - 🔹 **Clean & modular architecture** (Domain, Data, Presentation layers)  
 - 🔹 State management with **BLOC**
