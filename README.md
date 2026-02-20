@@ -5,6 +5,7 @@ A modern Flutter application that provides real-time cryptocurrency prices built
 ---
 
 
+
 ##  Features
 
  🔹 View **real-time prices** of popular cryptocurrencies  
